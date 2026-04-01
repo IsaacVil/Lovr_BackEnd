@@ -32,3 +32,41 @@ It will execute all the code locally without external dependencies.
 * Step 3. The backend processes the query parameter and searches in MongoDB
 * Step 4. The endpoint returns all profiles matching the specified interest
 * Step 5. The frontend receives the data and renders the results dynamically
+
+---
+## Layered design
+* The API is based on a layered architecture that consists on:
+* Controllers layer (Handles HTTP requests and responses)
+* Services layer (Contains business logic and validations)
+* Repositories layer (Handles database interaction with MongoDB)
+* Model layer (Defines schema for lover profiles)
+* DTO layer (Validates incoming data (name, age, interests))
+
+---
+## FrontEnd
+* Built with React
+* Uses client-side rendering
+* Communicates with backend via REST API
+
+---
+## Scripts
+
+```
+Backend:
+npm run dev
+Frontend:
+npm run dev
+```
+
+---
+## MultiRepo
+* The link of the repository for the backend:
+* The backend will be in /backend
+* The link of the repository for the frontend:
+* The frontend will be in /frontend
+
+---
+## Paradigm
+* OOP: The system is designed using an object-oriented approach, where each layer (controllers, services, repositories, models, and DTOs) is represented through objects with specific responsibilities.
+* DTOs (Data Transfer Objects) are used to transport data between layers without containing business logic. Their responsibility is to validate input data types and structure, and to construct objects with the required attributes for further processing.
+* Imperativo: The application follows an imperative execution flow, where explicit steps are defined: receiving the request, validating data through DTOs, executing business logic in services, interacting with repositories, and returning a response.
